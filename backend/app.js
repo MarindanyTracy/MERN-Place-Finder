@@ -28,7 +28,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose.connect(
-  'mongodb+srv://Marindany:Marindany@cluster0.oso02oc.mongodb.net/places'
+  'mongodb+srv://Marindany:Marindany@cluster0.oso02oc.mongodb.net/places?retryWrites=true&w=majority'
 ).then(() => {
   app.listen(5000)}
 ).catch(err => {

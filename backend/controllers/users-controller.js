@@ -28,7 +28,7 @@ const signup = async(req,res,next) => {
     return next ( new HttpError('Invalid inputs passed, please check your data', 422)
     );
   }
-  const { name, email, password, places } = req.body;
+  const { name, email, password } = req.body;
 
   let existingUser;
 try{
@@ -47,7 +47,7 @@ if(existingUser) {
     email,
     password,
     image: 'https://cdn-icons-png.flaticon.com/512/21/21104.png',
-    places
+    places: []
   })
 
   try {

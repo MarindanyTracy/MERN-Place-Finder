@@ -7,22 +7,9 @@ const HttpError = require('../models/http-error');
 const getCoordsForAddress = require('../util/location');
 const Place = require('../models/place');
 
-let DUMMY_PLACES = [
-  {
-    id: 'p1',
-    title: 'Empire State Building',
-    description: 'One of the most famous sky scrapers in the world!',
-    location: {
-      lat: 40.7484474,
-      lng: -73.9871516
-    },
-    address: '20 W 34th St., New York, NY 10001',
-    creator: 'u1'
-  }
-];
 
 const getPlaceById = async (req, res, next) => {
-  const placeId = req.params.pid; // { pid: 'p1' }
+  const placeId = req.params.pid; 
 
   let place;
   try{
@@ -38,11 +25,9 @@ const getPlaceById = async (req, res, next) => {
   
   }
 
-  res.json({ place: place.toObject( {getters: true})}); // => { place } => { place: place }
+  res.json({ place: place.toObject( {getters: true})}); 
 };
 
-// function getPlaceById() { ... }
-// const getPlaceById = function() { ... }
 
 const getPlacesByUserId = async(req, res, next) => {
   const userId = req.params.uid;

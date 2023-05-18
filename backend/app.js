@@ -12,7 +12,17 @@ dotenv.config();
 
 app.use(bodyParser.json());
 
-app.use("/api/places", placesRoutes); 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", '*');
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
+  next();
+});
+
+app.use("/api/places", placesRoutes);
 
 app.use("/api/users", usersRoutes);
 
@@ -31,15 +41,14 @@ app.use((error, req, res, next) => {
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_DB);
+    await mongoose.connect(process.env.MONGO);
     console.log("Connected to mongoDB");
   } catch (err) {
     throw err;
   }
 };
 
-app.listen(process.env.PORT, () =>{
-  console.log("Server Running!")
+app.listen(process.env.PORT, () => {
+  console.log("Server Running!");
   connect();
-})
-
+});

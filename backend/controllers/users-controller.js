@@ -48,7 +48,7 @@ const signup = async (req, res, next) => {
     name,
     email,
     password,
-    image: "https://cdn-icons-png.flaticon.com/512/21/21104.png",
+    image: req.file.path,
     places: [],
   });
 

@@ -12,7 +12,7 @@ import {
 } from '../../shared/util/validators';
 import { useForm } from '../../shared/hooks/form-hook';
 import { useHttpClient } from '../../shared/hooks/http-hook';
-import { AuthContext, AuuthContext } from '../../shared/context/auth-context';
+import { AuthContext } from '../../shared/context/auth-context';
 import './PlaceForm.css';
 import { useHistory } from 'react-router-dom';
 

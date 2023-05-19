@@ -69,7 +69,7 @@ const createPlace = async (req, res, next) => {
     description,
     address,
     location: coordinates,
-    image: 'https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg',
+    image: req.file.path,
     creator
   });
   let user;

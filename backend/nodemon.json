@@ -1,0 +1,9 @@
+{
+  "env": {
+    "USER":"paige",
+    "PASSWORD":"0723055173",
+    "NAME": "mern",
+    "GOOGLE_API_KEY": "AIzaSyAWt-HPRFzBV8f_XfSrlH2A2IcdMZ3Wc_Q",
+    "JWT_KEY":  "supersecret_dont_share"
+  }
+}
